@@ -228,7 +228,7 @@ func devicesConnect(name string, args []string, rctx RunContext, usage func()) {
 		log.Fatal(err)
 	}
 
-	workerData := []*ConnectWorkerData{}
+	workerData := make([]*ConnectWorkerData, 0)
 
 	for _, u := range rctx.UUIDs {
 		dev, err := device.Load(u, rctx.DB)
